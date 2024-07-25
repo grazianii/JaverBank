@@ -27,4 +27,21 @@ public class ContaCorrente {
 
     @Column (name = "saldo_cc")
     private float saldo_cc;
+
+    public void setSaldo_cc(float saldo_cc){
+        this.saldo_cc = saldo_cc;
+        updateScoreCredito();
+    }
+
+    // Atualiza o score da conta corrente com base no saldo em conta, sempre que for setado um novo saldo
+    private void updateScoreCredito(){
+        this.score_credito = this.saldo_cc * 0.1f;
+    }
+
+    // Persiste o valor de score_credito sempre que o saldo for alterado
+    @PrePersist
+    @PreUpdate
+    public void persistAndUpdate(){
+        updateScoreCredito();
+    }
 }
