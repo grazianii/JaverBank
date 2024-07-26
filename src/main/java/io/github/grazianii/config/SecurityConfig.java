@@ -56,10 +56,4 @@ public class SecurityConfig {
 
         return new InMemoryUserDetailsManager(commonUser, adminUser);
     }
-
-    // Remove o prefixo "ROLE_" de permissões atribuídas na aplicação
-    @Bean
-    public GrantedAuthorityDefaults grantedAuthorityDefaults(){
-        return new GrantedAuthorityDefaults("");
-    }
 }
