@@ -59,5 +59,5 @@ http://localhost:8080/swagger-ui.html
 
 O projeto utiliza o banco de dados H2 em memória. O console do H2 pode ser acessado em:
 ```bash
-http://localhost:8080/h2-console
+http://localhost:8090/h2-console
 ```
